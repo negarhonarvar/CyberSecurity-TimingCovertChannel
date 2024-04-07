@@ -27,6 +27,7 @@ def receive_message(timing_intervals, short_interval=0.1, long_interval=0.2, tol
             # while storing each bit in current sequence we need to check for end signal sequence
             message_bits.append(bit)
             if current_sequence.endswith("001100"): # "001100" is end signal
+                decoding = False
                 return ''.join(message_bits[:-6]) # we remove the end signal from main massage , since we know the end signal we know it's length too
 
     # if the massage doesn't start with start signal or no message is found
@@ -39,4 +40,4 @@ simulated_intervals = simulate_received_signal(encoded_message)
 
 # decoding massage , the receiving proccess doesn't actually happen
 decoded_message = receive_message(simulated_intervals)
-print("Received message:", decoded_message)
+print("A massage is being recievd:", decoded_message)
