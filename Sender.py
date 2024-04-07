@@ -11,10 +11,10 @@ def send_message(message, short_interval=0.1, long_interval=0.2):
             time.sleep(short_interval)
         elif bit == '1':
             time.sleep(long_interval)
-        print(bit, end='', flush=True)  # Simulating sending a bit
-    print()  # For clarity
+        print(bit, end='', flush=True)
+    print()
 
 # The binary message to send
-binary_message = "10101100101" # 1381
-print("Sending message:", binary_message)
+binary_message =input("please enter the massage you want to transmit : ")  # "10101100101" =  1381
+print("A binary massage is being sent ...:", binary_message)
 send_message(binary_message)
